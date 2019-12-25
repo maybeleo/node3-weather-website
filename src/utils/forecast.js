@@ -11,7 +11,7 @@ const forecast = (lat, lon, callback) => {
             callback("Unable to get forecast");
         }
         else {
-            callback(undefined, `${data.body.daily.data[0].summary} It is currently ${data.body.currently.temperature} degrees out. There is a ${data.body.currently.precipProbability}% chance of rain.`);
+            callback(undefined, `${data.body.daily.data[0].summary} It is currently ${data.body.currently.temperature} degrees out. There is a ${data.body.currently.precipProbability}% chance of rain. Temperature low: ${data.body.daily.data[0].temperatureLow}, high: ${data.body.daily.data[0].temperatureHigh}`);
         }
     });
     
